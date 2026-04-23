@@ -2,7 +2,7 @@ import streamlit as st
 import torch
 import numpy as np
 from PIL import Image
-from transformers import AutoImageProcessor, AutoModelForImageClassification
+from transformers import AutoImageProcessor, SiglipForImageClassification
 
 # -------------------------------------------------
 # PAGE CONFIG
@@ -16,10 +16,12 @@ st.set_page_config(
 # -------------------------------------------------
 # LOAD HUGGINGFACE MODEL
 # -------------------------------------------------
+
 @st.cache_resource
 def load_model():
-    processor = AutoImageProcessor.from_pretrained("Ateeqq/skin-disease-prediction-exp-v1")
-    model = AutoModelForImageClassification.from_pretrained("Ateeqq/skin-disease-prediction-exp-v1")
+    model_name = "Ateeqq/skin-disease-prediction-exp-v1"
+    processor = AutoImageProcessor.from_pretrained(model_name)
+    model = SiglipForImageClassification.from_pretrained(model_name)
     return processor, model
 
 processor, model = load_model()
