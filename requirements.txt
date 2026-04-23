@@ -1,8 +1,9 @@
 streamlit==1.32.0
-transformers==4.37.2
-torch==2.1.2
-torchvision==0.16.2
-pillow==10.2.0
 numpy==1.26.4
 requests==2.31.0
-huggingface-hub==0.20.3
+huggingface-hub==0.20.3streamlit
+torch==2.2.2
+torchvision==0.17.2
+transformers==4.40.0
+safetensors>=0.4.3
+pillow>=10.0.0
